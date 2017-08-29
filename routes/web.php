@@ -16,21 +16,21 @@
 });*/
 
 #index
-Route::get('/', 'ProductsController@index');
+Route::get('/', 'Products@index');
 
 #add a new product
-Route::get('/products/new', 'ProductsController@new');
-Route::post('/products/new', 'ProductsController@create');
+Route::get('/products/new', 'Products@new');
+Route::post('/products/new', 'Products@create');
 
 #show a individual product
-Route::get('/products/{product}', 'ProductsController@show');
+Route::get('/products/{product}', 'Products@show');
 
 #edit a product
-Route::get('/products/{product}/edit', 'ProductsController@edit');
-Route::post('/products/{product}/edit', 'ProductsController@update'); #isn't this should be patch method?
+Route::get('/products/{product}/edit', 'Products@edit');
+Route::post('/products/{product}/edit', 'Products@update'); #isn't this should be patch method?
 
 #destroy a product
-Route::delete('/products/{product}', 'ProductsController@destroy');
+Route::delete('/products/{product}', 'Products@destroy');
 
 
 
