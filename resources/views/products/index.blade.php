@@ -4,6 +4,10 @@
 		<title>index | animestar</title>
 	</head>
 	<body>
-		Hello, world
+		welcome to animestar
+		<br>
+		<a href="{{ url('/products/new') }}">add new anime</a>
+    		
+		
 	</body>
 </html>
