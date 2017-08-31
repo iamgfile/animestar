@@ -20,11 +20,11 @@ class Products extends Controller
   }
 
 #post products/new
-#incomplete!! no description
 	public function create(Request $request)
 	{
 		$product = new Product();
 		$product->title = $request->title;
+		$product->description = $request->description;
 		$product->save();
 		return redirect('/');
 	}
