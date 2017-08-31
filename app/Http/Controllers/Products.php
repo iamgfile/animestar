@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
 
 class Products extends Controller
@@ -22,7 +23,7 @@ class Products extends Controller
 #post products/new
 	public function create(Request $request)
 	{
-		$product = new Product();
+		$product = new Product;
 		$product->title = $request->title;
 		$product->description = $request->description;
 		$product->save();
