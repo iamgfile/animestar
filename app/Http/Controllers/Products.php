@@ -11,7 +11,8 @@ class Products extends Controller
   #get /products or /
   public function index()
   {
-    return view('products.index');
+		$products = Product::all();
+    return view('products.index')->with('products',$products);
   }
 
   #get /products/new
