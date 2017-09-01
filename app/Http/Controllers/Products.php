@@ -32,18 +32,19 @@ class Products extends Controller
 	}
 
 #get products/1
-	public function show($product)
+	public function show($id)
 	{
+		$product = Product::find($id);
 		return view('products.show', compact('product'));	
 	}
 #get products/1/edit
-	public function edit($product)
+	public function edit($id)
 	{
 		return view('products.edit', compact('product'));
 	}
 
 #post products/1/edit
-	public function update($product,Request $request)
+	public function update($id,Request $request)
 	{
 		$product->title = $request->$title;
 		$product->save();
@@ -53,7 +54,7 @@ class Products extends Controller
 #delete products/1	
 	public function destroy()
 	{
-		$product.destroy;	
+		$id.destroy;	
     return redirect ('/');
 	}
 

@@ -23,14 +23,14 @@ Route::get('/products/new', 'Products@new');
 Route::post('/products/new', 'Products@create');
 
 #show a individual product
-Route::get('/products/{product}', 'Products@show');
+Route::get('/products/{id}', 'Products@show');
 
 #edit a product
-Route::get('/products/{product}/edit', 'Products@edit');
-Route::post('/products/{product}/edit', 'Products@update'); #isn't this should be patch method?
+Route::get('/products/{id}/edit', 'Products@edit');
+Route::post('/products/{id}/edit', 'Products@update'); #isn't this should be patch method?
 
 #destroy a product
-Route::delete('/products/{product}', 'Products@destroy');
+Route::delete('/products/{id}', 'Products@destroy');
 
 
 
