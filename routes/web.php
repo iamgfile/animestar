@@ -15,27 +15,20 @@
     return view('welcome');
 });*/
 
-#index
+//index
 Route::get('/', 'Products@index');
 
-#add a new product
+//add a new product
 Route::get('/products/new', 'Products@new');
 Route::post('/products/new', 'Products@create');
 
-#show a individual product
+//show a individual product
 Route::get('/products/{id}', 'Products@show');
 
-#edit a product
+//edit a product
 Route::get('/products/{id}/edit', 'Products@edit');
 Route::post('/products/{id}/edit', 'Products@update'); #isn't this should be patch method?
 
-#destroy a product
+//destroy a product
 Route::delete('/products/{id}', 'Products@destroy');
-
-
-
-
-
-
-
 

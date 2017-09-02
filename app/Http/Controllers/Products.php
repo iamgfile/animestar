@@ -8,42 +8,39 @@ use Illuminate\Http\Request;
 class Products extends Controller
 {
 
-  #get /products or /
+  //get /products or /
   public function index()
   {
 		$products = Product::all();
     return view('products.index')->with('products',$products);
   }
 
-  #get /products/new
+  //get /products/new
   public function new()
   {
     return view('products.new');
   }
 
-#post products/new
+	//post products/new
 	public function create(Request $request)
 	{
-		$product = new Product;
-		$product->title = $request->title;
-		$product->description = $request->description;
-		$product->save();
+		Product::create($request->all());
 		return redirect('/');
 	}
 
-#get products/1
+	//get products/1
 	public function show($id)
 	{
 		$product = Product::find($id);
 		return view('products.show', compact('product'));	
 	}
-#get products/1/edit
+	//get products/1/edit
 	public function edit($id)
 	{
 		return view('products.edit', compact('product'));
 	}
 
-#post products/1/edit
+	//post products/1/edit
 	public function update($id,Request $request)
 	{
 		$product->title = $request->$title;
@@ -51,7 +48,7 @@ class Products extends Controller
 		return redirect('/products/$product');
 	}
 
-#delete products/1	
+	//delete products/1	
 	public function destroy()
 	{
 		$id.destroy;	
