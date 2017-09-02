@@ -2,9 +2,11 @@
 <html lang="{{ config('app.locale') }}">
 	<head>
 		<title>@yield('title')</title>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    {{ Html::style('css/app.css') }}
 	</head>
 	<body>
-	@yield('content')
+    <div class="container">
+  	  @yield('content')
+    </div>
 	</body>
 </html>
