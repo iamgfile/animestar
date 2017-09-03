@@ -3,7 +3,7 @@
 @section('content')
   <h1>welcome to animestar</h1>
   <div class="text-right">
-	  <a href="{{ url('/products/new') }}", class="btn btn-primary">add new anime</a>
+    {{ link_to_action('Products@new', 'add a new anime', [], ['class' => "btn btn-primary"]) }}
   </div>
 	<hr/>
   <div class="table-responsive">
@@ -20,7 +20,7 @@
           <tr>
 	          <td>{!!$product->title!!}</td>
 	          <td>{!!$product->description!!}</td>
-            <td><a href="{{ url('/products/'.$product->id) }}", class="btn btn-default">show this anime</a></td>
+            <td>{{ link_to_action('Products@show', 'show this anime', array($product->id), ['class' => 'btn btn-default']) }}</td>
           </tr>      
         @endforeach
       </tbody>
