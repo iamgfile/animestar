@@ -24,7 +24,7 @@ class Products extends Controller
 	//post products/new
 	public function create(Request $request)
 	{
-		Product::create($request->all());
+		Product::create(Request::all());
 		return redirect('/');
 	}
 
