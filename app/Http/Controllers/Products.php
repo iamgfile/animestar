@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
-use Illuminate\Http\Request;
+use Request;
 
 class Products extends Controller
 {
@@ -37,15 +37,17 @@ class Products extends Controller
 	//get products/1/edit
 	public function edit($id)
 	{
+		$product = Product::find($id);
 		return view('products.edit', compact('product'));
 	}
 
 	//post products/1/edit
 	public function update($id,Request $request)
 	{
-		$product->title = $request->$title;
+	  $product = Product::find($id); 
+  	$product->update(Request::all());
 		$product->save();
-		return redirect('/products/$product');
+		return redirect('/');
 	}
 
 	//delete products/1	

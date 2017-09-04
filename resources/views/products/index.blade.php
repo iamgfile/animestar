@@ -20,7 +20,7 @@
           <tr>
 	          <td>{!!$product->title!!}</td>
 	          <td>{!!$product->description!!}</td>
-            <td>{{ link_to_action('Products@show', 'show this anime', array($product->id), ['class' => 'btn btn-default']) }}</td>
+            <td>{{ link_to_action('Products@show', 'show this anime', [$product->id], ['class' => 'btn btn-default']) }}</td>
           </tr>      
         @endforeach
       </tbody>
