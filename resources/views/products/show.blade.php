@@ -8,6 +8,10 @@
   <br>
   {{ link_to_action('Products@index', 'back', [], ['class' => 'btn btn-default']) }}
   <br>
-  {{ link_to_action('Products@edit', 'edit this anime', [$product->id], ['class' => 'btn btn-warning']) }}
-  {{ link_to_action('Products@destroy', 'delete this anime', [$product->id], ['class' => 'btn btn-danger']) }}
+	<div class="text-right">
+		{{ link_to_action('Products@edit', 'edit this anime', [$product->id], ['class' => 'btn btn-warning']) }}
+		{{Form::open(['action'=> ['Products@destroy', $product->id], 'method' => 'DELETE']) }}
+			{{Form::submit('Delete this anime', ['class' => 'btn btn-danger']) }}
+		{{Form::close()}}
+	</div>
 @endsection

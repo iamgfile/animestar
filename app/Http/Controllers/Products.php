@@ -44,16 +44,14 @@ class Products extends Controller
 	//post products/1/edit
 	public function update($id,Request $request)
 	{
-	  $product = Product::find($id); 
-  	$product->update(Request::all());
-		$product->save();
+		Product::find($id)->update(Request::all());
 		return redirect('/');
 	}
 
 	//delete products/1	
-	public function destroy()
+	public function destroy($id)
 	{
-		$id.destroy;	
+		Product::find($id)->delete();	
     return redirect ('/');
 	}
 

@@ -27,7 +27,7 @@ Route::get('/products/{id}', 'Products@show');
 
 //edit a product
 Route::get('/products/{id}/edit', 'Products@edit');
-Route::patch('/products/{id}/edit', 'Products@update'); #isn't this should be patch method?
+Route::patch('/products/{id}/edit', 'Products@update');
 
 //destroy a product
 Route::delete('/products/{id}', 'Products@destroy');
