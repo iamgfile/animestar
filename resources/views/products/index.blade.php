@@ -6,6 +6,7 @@
     {{ link_to_action('Products@new', 'add a new anime', [], ['class' => "btn btn-primary"]) }}
   </div>
 	<hr/>
+  {!! $products->render() !!}
   <div class="table-responsive">
     <table class="table table-hover">
       <thead>
