@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+
 use Request;
+
+use App\Http\Requests\CreateProductRequest;
 
 class Products extends Controller
 {
@@ -35,14 +38,14 @@ class Products extends Controller
 
     post products/new
 
-    @param \Illuminate\Http\Request	$request
+    @param \app\Http\Requests\CreateProductRequest	$request
 
     @return \Illuminate\Http\Response
 
      */
 
 
-    public function create(Request $request)
+    public function create(CreateProductRequest $request)
     {
         Product::create(Request::all());
         return redirect('/');
@@ -85,12 +88,12 @@ class Products extends Controller
 
     @param int $id
 
-    @param \Illuminate\Http\Request $request
+    @param \app\Http\Requests\CreateProductRequest	$request
 
     @return \Illuminate\Http\Response
 
     */
-    public function update(int $id,Request $request)
+    public function update(int $id,CreateProductRequest $request)
     {
         Product::find($id)->update(Request::all());
         return redirect('/');
