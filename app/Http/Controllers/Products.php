@@ -58,7 +58,7 @@ class Products extends Controller
 
      */
 
-    public function show($id)
+    public function show(int $id)
     {
         $product = Product::find($id);
         return view('products.show', compact('product'));	
@@ -73,7 +73,7 @@ class Products extends Controller
 
      */
 
-    public function edit($id)
+    public function edit(int $id)
     {
         $product = Product::find($id);
         return view('products.edit', compact('product'));
@@ -90,7 +90,7 @@ class Products extends Controller
     @return \Illuminate\Http\Response
 
     */
-    public function update($id,Request $request)
+    public function update(int $id,Request $request)
     {
         Product::find($id)->update(Request::all());
         return redirect('/');
@@ -105,7 +105,7 @@ class Products extends Controller
     @return \Illuminate\Http\Response
 
     */
-    public function destroy($id)
+    public function destroy(int $id)
     {
         Product::find($id)->delete();	
         return redirect ('/');
