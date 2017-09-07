@@ -26,7 +26,7 @@ Route::post('/products/new', 'Products@create');
 Route::get('/products/{id}', 'Products@show');
 
 //edit a product
-Route::get('/products/{id}/edit', 'Products@edit');
+Route::get('/products/{id}/edit', 'Products@edit')->name('edit');
 Route::patch('/products/{id}/edit', 'Products@update');
 
 //destroy a product

@@ -5,7 +5,11 @@
 <br>
 {!!'description: '.$product->description!!}
 <br>
-<br>
+@if (!!$product->image_filename && $product->image_filename != "noimage")
+    <img src="{{ asset('storage/productimage/' .$product->image_filename) }}" alt="image" />
+    <br>
+@endif
+
 {{ link_to_action('Products@index', 'back', [], ['class' => 'btn btn-default']) }}
 <br>
 <div class="text-right">

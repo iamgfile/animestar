@@ -57,7 +57,7 @@ class Products extends Controller
             $request['image_filename'] = "noimage";
             }
         Product::create($request->all());
-        return redirect('/');
+        return redirect("/products/$id");
     }
 
     /**
@@ -73,7 +73,6 @@ class Products extends Controller
     public function show(int $id)
     {
         $product = Product::find($id);
-        dd($product);
         return view('products.show', compact('product'));	
     }
     /**
@@ -105,8 +104,17 @@ class Products extends Controller
     */
     public function update(int $id,CreateProductRequest $request)
     {
-        Product::find($id)->update(Request::all());
-        return redirect('/');
+        if (!empty($request->file('image')))
+            {
+            $filename = $request->image->store('productimage/', 'public');
+            $request->merge(['image_filename' => basename($filename)]);
+            }
+        else if ($request->delete == "on")
+            {
+            $request->merge(['image_filename' => "noimage" ]);
+            }
+        Product::find($id)->update($request->all());
+        return redirect("/products/$id");
     }
 
     /**

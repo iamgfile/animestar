@@ -22,8 +22,13 @@ require	$submitbuttontext
     {!! Form::label('image', 'upload image', ['class' => 'control-label']) !!}
     {!! Form::file('image', null, ['class' => 'form-control']) !!}
 </div>
+@if(\Route::current() -> getName() == 'edit')
 
-
+    {!! Form::checkbox('delete',null, ['class' => 'form-control']) !!}
+    
+delete the image 
+@endif
+<br>
 {{ link_to_action('Products@index', 'back', [], ['class' => 'btn btn-default']) }}
 <div class="text-right">
     {!! Form::submit($submitbuttontext,['class' => 'btn btn-primary']) !!}
