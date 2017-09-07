@@ -3,7 +3,7 @@
 @section('content')
 <h1>add a new anime</h1>
 <hr/>
-{{ Form::open(['action' => 'Products@create']) }}
+{{ Form::open(['action' => 'Products@create', 'files' => true]) }}
 @include('products._form', ['submitbuttontext' => 'add a new anime'])
 {{ Form::close() }}
 @endsection

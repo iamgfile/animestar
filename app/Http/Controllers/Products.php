@@ -47,7 +47,16 @@ class Products extends Controller
 
     public function create(CreateProductRequest $request)
     {
-        Product::create(Request::all());
+        if (!empty($request->file('image')))
+            {
+            $filename = $request->image->store('productimage/', 'public');
+            $request->merge(['image_filename' => basename($filename)]);
+            }
+        else
+            {
+            $request['image_filename'] = "noimage";
+            }
+        Product::create($request->all());
         return redirect('/');
     }
 
@@ -64,6 +73,7 @@ class Products extends Controller
     public function show(int $id)
     {
         $product = Product::find($id);
+        dd($product);
         return view('products.show', compact('product'));	
     }
     /**

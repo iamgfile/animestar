@@ -32,3 +32,7 @@ Route::patch('/products/{id}/edit', 'Products@update');
 //destroy a product
 Route::delete('/products/{id}', 'Products@destroy');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
