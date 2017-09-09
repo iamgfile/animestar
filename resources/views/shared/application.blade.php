@@ -3,6 +3,7 @@
     <head>
         <title>@yield('title')</title>
         {{ Html::style('css/app.css') }}
+        {{ Html::style('css/custom.css') }}
     </head>
     <body>
         <div class="container">

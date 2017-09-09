@@ -50,14 +50,14 @@ class Products extends Controller
         if (!empty($request->file('image')))
             {
             $filename = $request->image->store('productimage/', 'public');
-            $request->merge(['image_filename' => basename($filename)]);
+            $request['image_filename'] = basename($filename);
             }
         else
             {
             $request['image_filename'] = "noimage";
             }
         Product::create($request->all());
-        return redirect("/products/$id");
+        return redirect("/");
     }
 
     /**
@@ -104,10 +104,11 @@ class Products extends Controller
     */
     public function update(int $id,CreateProductRequest $request)
     {
+        
         if (!empty($request->file('image')))
             {
             $filename = $request->image->store('productimage/', 'public');
-            $request->merge(['image_filename' => basename($filename)]);
+            $request['image_filename'] = basename($filename);
             }
         else if ($request->delete == "on")
             {
