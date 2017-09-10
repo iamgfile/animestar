@@ -12,8 +12,7 @@
         <thead>
             <tr>
                 <th>image</th>
-                <th>title</th>
-                <th>description</th>
+                <th>title and description</th>
                 <th>rating</th>
                 <th colspan="3"></th>
             </tr>
@@ -22,8 +21,10 @@
             @foreach($products as $product)
             <tr>
                 <td><img src="{{ asset('storage/productimage/' .$product->image_filename) }}" alt="image"/></td>
-                <td>{!!$product->title!!}</td>
-                <td>{!!$product->description!!}</td> 
+                <td>
+                    <h2>{!!$product->title!!}</h2>
+                    <h4>{!!$product->description!!}</h4>
+                </td> 
                 <td>
                     @if ($product->rating>50)
                         <div class="animerating-good">

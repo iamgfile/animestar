@@ -4,6 +4,7 @@
         <title>@yield('title')</title>
         {{ Html::style('css/app.css') }}
         {{ Html::style('css/custom.css') }}
+        <div class="center"><h2><p>animestar</p><h2></div>
     </head>
     <body>
         <div class="container">

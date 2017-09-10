@@ -26,7 +26,7 @@ class AddImageToProducts extends Migration
     public function down()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->dropColomn('image_filename');
+         //   $table->dropColomn('image_filename');
         });
     }
 }
