@@ -1,18 +1,65 @@
-.animerating-good {
-  background-color: #7FFFD4;
-  padding: 20px 20px;
-}
-
-.animerating-bad {
-  background-color: #ffa500;
-  padding: 20px 20px;
-}
-
 /********* header ********/
 
 .center {
   margin: auto;
   width: 400px;
   text-align: center;
+}
+
+/********* index ********/
+
+.animerating,
+.animerating-good,
+.animerating-bad {
+  height: 50px;
+  width: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  float: right;
+}
+
+.animerating-good {
+  background-color: #7FFFD4;
+}
+
+.animerating-bad {
+  background-color: #ffa500;
+}
+
+.index-box {
+  position: relative;
+  width: 100%;
+  padding: 5px;
+}
+
+.index-box a {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  text-indent: -9999px;
+}
+
+.index-box a:hover {
+  background-color: #FFF;
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+.index-box img {
+  display: block;
+  float: left;
+  width: 10%;
+  height: auto;
 }
 

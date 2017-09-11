@@ -1,12 +1,3 @@
-.animerating-good{
-        background-color: #7FFFD4;
-        padding: 20px 20px;
-}
-.animerating-bad{
-        background-color: #ffa500;
-        padding: 20px 20px;
-}
-
 /********* header ********/
 .center{
     margin: auto;
@@ -14,3 +5,49 @@
     text-align: center;
 }
 
+/********* index ********/
+
+.animerating {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+}
+.animerating-good{
+    @extend .animerating;
+    background-color: #7FFFD4;
+}
+  
+.animerating-bad{
+    @extend .animerating;
+    background-color: #ffa500;
+}
+
+.index-box {
+    position: relative;
+    width: 100%;
+    padding: 5px;
+    a {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        text-indent: -9999px;
+        &:hover{
+            background-color: #FFF;
+            -moz-opacity: 0.5;
+            opacity: 0.5;
+            filter: alpha(opacity=50);
+        }
+    }
+    img {
+        display: block;
+        float: left;
+        width: 10%;
+        height: auto;
+    }
+}
